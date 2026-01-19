@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Login Container -->
+    <div class="login-container">
+      <h1 class="login-title">Please login</h1>
+
+      <div class="input-group">
+        <input
+          type="text"
+          id="username"
+          class="input-field"
+          placeholder="Enter your username"
+        />
+      </div>
+
+      <div class="input-group">
+        <input
+          type="password"
+          id="password"
+          class="input-field"
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <button id="loginButton" class="login-button">Login</button>
+    </div>
+
+    <!-- Modal Dialog (hidden by default) -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <div>
+          <div class="modal-icon" id="modalIcon"></div>
+          <p class="modal-message" id="modalMessage"></p>
+        </div>
+        <button id="modalOkButton" class="modal-ok-button">OK</button>
+      </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
