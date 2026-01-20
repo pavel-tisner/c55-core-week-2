@@ -1,13 +1,23 @@
-// Do not change the line below
-import { errorMessage, successMessage } from './app.js';
+import { errorMessage, successMessage } from "./app.js";
 
 let incorrectAttempts = 0;
+const loginButton = document.getElementById("loginButton");
 
 function onLogin(username, password) {
-  // Write your code here.
-  // Use the variables 'username' and 'password' to access the input values
-  // Use incorrectAttempts to track the number of failed attempts
+  if (
+    ((username === "admin" && password === "Hack1234") ||
+      (username === "user" && password === "7654321")) &&
+    incorrectAttempts < 3) {
+    successMessage("Logged in successfully");
+    incorrectAttempts = 0;
+  } else {
+    errorMessage("Incorrect credentials");
+    incorrectAttempts += 1;
+    if (incorrectAttempts > 3) {
+      loginButton.disabled = true;
+      errorMessage("Login blocked: Too many incorrect attempts");
+    }
+  }
 }
 
-// Do not change the line below
 export { onLogin };
